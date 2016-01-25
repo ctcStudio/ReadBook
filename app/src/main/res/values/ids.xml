@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- item books list ids-->
+    <item name="item_book_content" type="id"/>
+    <item name="item_book_app_signature" type="id"/>
+    <item name="item_book_title" type="id"/>
+    <item name="item_book_speed_read" type="id"/>
+</resources>

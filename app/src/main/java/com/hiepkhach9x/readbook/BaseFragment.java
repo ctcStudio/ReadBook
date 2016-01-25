@@ -19,5 +19,5 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
-    public abstract void findId(View view);
+    public abstract void initView(View view);
 }

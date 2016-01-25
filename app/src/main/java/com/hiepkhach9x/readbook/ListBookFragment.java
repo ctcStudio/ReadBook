@@ -2,21 +2,24 @@ package com.hiepkhach9x.readbook;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.hiepkhach9x.readbook.adapter.TabPagerAdapter;
-
 /**
  * Created by HungHN on 1/25/2016.
  */
-public class HomeFragment extends BaseFragment {
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-    private TabPagerAdapter mAdapter;
+public class ListBookFragment extends BaseFragment {
+    private static final int spanCount = 3;
+    RecyclerView recyclerView;
+
+
+    public static ListBookFragment newInstanse(){
+        ListBookFragment fragment = new ListBookFragment();
+        return fragment;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,7 @@ public class HomeFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_list_book,container,false);
         return view;
     }
 
@@ -37,13 +40,8 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void initView(View view) {
-        mAdapter = new TabPagerAdapter(getFragmentManager());
-
-        viewPager = (ViewPager) view.findViewById(R.id.viewpager);
-        viewPager.setAdapter(mAdapter);
-
-        tabLayout = (TabLayout) view.findViewById(R.id.tablayout);
-        tabLayout.setupWithViewPager(viewPager);
-
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),spanCount);
+        recyclerView.setLayoutManager(gridLayoutManager);
     }
 }
