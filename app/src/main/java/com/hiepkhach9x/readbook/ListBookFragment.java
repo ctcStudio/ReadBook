@@ -8,12 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hiepkhach9x.readbook.adapter.ListBookAdapter;
+import com.hiepkhach9x.readbook.entities.EBook;
+
+import java.util.ArrayList;
+
 /**
  * Created by HungHN on 1/25/2016.
  */
 public class ListBookFragment extends BaseFragment {
     private static final int spanCount = 3;
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
+    private ListBookAdapter bookAdapter;
+    private ArrayList<EBook> lstBook;
 
 
     public static ListBookFragment newInstanse(){
@@ -43,5 +50,10 @@ public class ListBookFragment extends BaseFragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),spanCount);
         recyclerView.setLayoutManager(gridLayoutManager);
+        if(lstBook == null){
+            lstBook = new ArrayList<>();
+        }
+        bookAdapter = new ListBookAdapter(getActivity(),lstBook);
+        recyclerView.setAdapter(bookAdapter);
     }
 }

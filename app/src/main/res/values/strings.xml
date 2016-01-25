@@ -5,4 +5,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="title_tab_all">Tất Cả</string>
+    <string name="title_tab_tien_hiep">Tiên Hiệp</string>
+    <string name="title_tab_ngon_tinh">Ngôn Tình</string>
 </resources>

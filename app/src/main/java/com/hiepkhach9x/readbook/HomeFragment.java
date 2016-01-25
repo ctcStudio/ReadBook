@@ -18,6 +18,11 @@ public class HomeFragment extends BaseFragment {
     private ViewPager viewPager;
     private TabPagerAdapter mAdapter;
 
+    public static HomeFragment newInstance() {
+        HomeFragment homeFragment = new HomeFragment();
+        return homeFragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +42,7 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     public void initView(View view) {
-        mAdapter = new TabPagerAdapter(getFragmentManager());
+        mAdapter = new TabPagerAdapter(getActivity(), getFragmentManager());
 
         viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         viewPager.setAdapter(mAdapter);
