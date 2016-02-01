@@ -7,7 +7,7 @@ import java.util.List;
  */
 public interface Books {
 
-    public EBook read(String fileName);
+    public EBook read();
     public List<String> getPage(EBook book);
 
 }

@@ -4,12 +4,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
-import com.hiepkhach9x.readbook.entities.Setting;
+import com.hiepkhach9x.readbook.BookApplication;
+import com.hiepkhach9x.readbook.entities.BookSetting;
 
 /**
  * Created by HungHN on 2/1/2016.
  */
-public class SettingPreferences {
+public class SettingBookPreferences {
     private static String TAG = "UserPreferences";
     private static final String FILE_PREFERENCES = "com.hiepkhach9x.readbook.setting";
     private static Context mContext;
@@ -17,12 +18,12 @@ public class SettingPreferences {
 
     private static final String KEY_SETTING = "key.setting";
 
-    protected SettingPreferences(Context context) {
-        this.mContext = context;
+    protected SettingBookPreferences() {
+        this.mContext = BookApplication.get();
     }
 
-    public static SettingPreferences getInstance(Context context) {
-        return new SettingPreferences(context);
+    public static SettingBookPreferences getInstance(Context context) {
+        return new SettingBookPreferences();
     }
 
     private SharedPreferences.Editor getEditor() {
@@ -63,14 +64,14 @@ public class SettingPreferences {
         getEditor().clear().commit();
     }
 
-    public boolean saveSetting(Setting setting) {
-        String strSetting = gson.toJson(setting);
+    public boolean saveSetting(BookSetting bookSetting) {
+        String strSetting = gson.toJson(bookSetting);
         return getEditor().putString(KEY_SETTING, strSetting).commit();
     }
 
-    public Setting getSetting() {
+    public BookSetting getSetting() {
         String strSetting = getSharedPreferences().getString(KEY_SETTING, "");
-        Setting setting = gson.fromJson(strSetting, Setting.class);
-        return setting;
+        BookSetting bookSetting = gson.fromJson(strSetting, BookSetting.class);
+        return bookSetting;
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
  */
 public class EpubBook implements Books {
     @Override
-    public EBook read(String fileName) {
+    public EBook read() {
         return null;
     }
 

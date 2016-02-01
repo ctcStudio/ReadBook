@@ -12,7 +12,7 @@ public class EBook implements Serializable{
     private String date;
     private String description;
     private String path;
-    private String content;
+    private StringBuilder content;
     private int readPosition;
     private int numberPage;
 
@@ -51,11 +51,11 @@ public class EBook implements Serializable{
         this.title = title;
     }
 
-    public String getContent() {
+    public StringBuilder getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    public void setContent(StringBuilder content) {
         this.content = content;
     }
 
