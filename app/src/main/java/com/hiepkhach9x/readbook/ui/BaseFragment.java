@@ -1,4 +1,4 @@
-package com.hiepkhach9x.readbook;
+package com.hiepkhach9x.readbook.ui;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;

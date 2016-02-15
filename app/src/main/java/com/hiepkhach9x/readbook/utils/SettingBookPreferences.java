@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
-import com.hiepkhach9x.readbook.BookApplication;
+import com.hiepkhach9x.readbook.ui.BookApplication;
 import com.hiepkhach9x.readbook.entities.BookSetting;
 
 /**

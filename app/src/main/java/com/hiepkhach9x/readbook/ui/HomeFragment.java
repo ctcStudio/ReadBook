@@ -1,4 +1,4 @@
-package com.hiepkhach9x.readbook;
+package com.hiepkhach9x.readbook.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hiepkhach9x.readbook.R;
 import com.hiepkhach9x.readbook.adapter.TabPagerAdapter;
 
 /**

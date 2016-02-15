@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.hiepkhach9x.readbook.ListBookFragment;
+import com.hiepkhach9x.readbook.ui.ListBookFragment;
 import com.hiepkhach9x.readbook.R;
 
 /**
